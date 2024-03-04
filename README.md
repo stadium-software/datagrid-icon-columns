@@ -42,6 +42,7 @@ td.edit-image:hover > * {
 ## Displaying an icon from the Iconify icons library
 
 **Dependency**
+
 To display icons using the Icons library, the [Icons Module](https://github.com/stadium-software/icons) must be implemented in the application
 
 ![](images/StadiumDesigner.png)
