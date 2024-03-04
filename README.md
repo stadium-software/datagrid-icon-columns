@@ -1,4 +1,4 @@
-# DataGrid Icon Columns
+# DataGrid Icons Property
 
 Since Stadium 6.8.3 we can use the column classes property to easily display icons in DataGrid columns. 
 
