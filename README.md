@@ -2,6 +2,10 @@
 
 Since Stadium 6.8.3 we can use the column classes property to easily display icons in DataGrid columns. 
 
+
+https://github.com/stadium-software/datagrid-icons-property/assets/2085324/14c42cd9-1d6c-4822-8c3f-91c7f51d217b
+
+
 ## Version
 1.0 initial release
 
