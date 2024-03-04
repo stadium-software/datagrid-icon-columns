@@ -41,10 +41,12 @@ td.edit-image:hover > * {
 
 ## Displaying an icon from the Iconify icons library
 
+**Dependency**
 To display icons using the Icons library, the [Icons Module](https://github.com/stadium-software/icons) must be implemented in the application
 
 ![](images/StadiumDesigner.png)
 
+**Datagrid Setup**
 1. Add the class 'stadium-icon' to the column "Classes" property
 2. Find a symbol you wish to display: see [finding and icon](https://github.com/stadium-software/icons?tab=readme-ov-file#finding-an-icon)
 3. Add the name of the symbol to the control classes property (e.g. 'material-symbols:edit' or 'material-symbols:delete')
