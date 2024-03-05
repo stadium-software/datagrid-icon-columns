@@ -38,10 +38,10 @@ To display icons using the Icons library, the [Icons Module](https://github.com/
 
 **Datagrid Setup**
 1. Add the class 'stadium-icon' to the column "Classes" property
-2. Find a symbol you wish to display: see [finding and icon](https://github.com/stadium-software/icons?tab=readme-ov-file#finding-an-icon)
+2. Find a symbol you wish to display (see [finding and icon](https://github.com/stadium-software/icons?tab=readme-ov-file#finding-an-icon))
 3. Add the name of the symbol to the control classes property (e.g. 'material-symbols:edit' or 'material-symbols:delete')
 
-*Example*
+*Example Classes*
 ```
 stadium-icon material-symbols:edit
 ```
@@ -75,7 +75,7 @@ Additional classes can be added to the control classes property to manipulate th
    1. The default icon color is inherited by the page
    2. *icon-color-######* allows you to define a custom icon color in hex (e.g. icon-color-#FFFF00, icon-color-ccc or icon-color-red)
 
-*Example*
+*Example Classes*
 ```
 stadium-icon material-symbols:edit icon-size-24 icon-color-eeeeee
 ```
