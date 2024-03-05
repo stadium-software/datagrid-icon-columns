@@ -24,7 +24,7 @@ Here are two ways to display an icon:
 
  [Option 1: Using the Iconify icons library](#option-1-using-the-iconify-icons-library)
  
- [Option 2: Using an image file](#option-2-displaying-an-image-file)
+ [Option 2: Using an image file](#option-2-using-an-image-file)
 
 <hr>
 
@@ -82,7 +82,7 @@ stadium-icon material-symbols:edit icon-size-24 icon-color-eeeeee
 
 <hr>
 
-### Option 2: Displaying an image file
+### Option 2: Using an image file
 
 1. Add a class of your choice to the selected column "Classes" property (e.g. edit-image)
 2. Find a PNG, SVG or JPG icon file (e.g. use this [icons library](https://icones.js.org/collection/all) or just search on Google)
