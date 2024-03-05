@@ -26,6 +26,8 @@ Here are two ways to display an icon:
  
  [Option 2: As a background image](#option-2-as-a-background-image)
 
+<hr>
+
 ### Option 1: Using the Iconify icons library
 
 **Dependency**
@@ -77,6 +79,8 @@ Additional classes can be added to the control classes property to manipulate th
 ```
 stadium-icon material-symbols:edit icon-size-24 icon-color-eeeeee
 ```
+
+<hr>
 
 ### Option 2: As a background image
 
