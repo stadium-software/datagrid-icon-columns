@@ -47,7 +47,7 @@ stadium-icon material-symbols:edit
 ```
 
 **Hiding the icon in the column header**
-1. Add the CSS below to the Stylesheet
+1. To hide the icon in the column header add the CSS below to the Stylesheet
 
 ```css
 th.stadium-icon > * {
