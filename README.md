@@ -18,28 +18,11 @@ https://github.com/stadium-software/datagrid-icons-property/assets/2085324/14c42
 2. Open the DataGrid "Columns" property
 3. Select a column with a "Click" event (like "Edit" or "Delete") and locate the "Classes" property
 
-## Displaying the icon as a background image
+## Displaying an icon
 
-1. Add a class of your choice to the selected column "Classes" property (e.g. edit-image)
-2. Find an icon file
-3. Drag it into the "EmbeddedFiles" folder
-4. Open the _Stylesheet_ in the Stadium Application Explorer
-5. Paste the CSS below into the Stylesheet. **NOTE:** The CSS below assumes the image name is "edit.png"
+Here are two examples how an icon can be displayed. 
 
-```css
-td.edit-image > *,
-td.edit-image:hover > * {
-    background-image: url('/src/assets/EmbeddedFiles/edit.png');
-    background-repeat: no-repeat;
-    background-size: 20px;
-    background-position: center;
-    height: 20px;
-    width: 30px;
-    font-size: 0;
-}
-```
-
-## Displaying an icon from the Iconify icons library
+### Using the Iconify icons library
 
 **Dependency**
 
@@ -57,7 +40,7 @@ To display icons using the Icons library, the [Icons Module](https://github.com/
 stadium-icon material-symbols:edit
 ```
 
-## Hiding the icon in the column header
+**Hiding the icon in the column header**
 1. Add the CSS below to the Stylesheet
 
 ```css
@@ -75,7 +58,7 @@ th.stadium-icon > * {
 }
 ```
 
-## Icon Styles
+**Styling the icon**
 
 Additional classes can be added to the control classes property to manipulate the icon
 
@@ -89,4 +72,25 @@ Additional classes can be added to the control classes property to manipulate th
 *Example*
 ```
 stadium-icon material-symbols:edit icon-size-24 icon-color-eeeeee
+```
+
+### Option 2: As a background image
+
+1. Add a class of your choice to the selected column "Classes" property (e.g. edit-image)
+2. Find a PNG, SVG or JPG icon file (e.g. use this [icons library](https://icones.js.org/collection/all) or just search on Google)
+3. Drag the file into the "EmbeddedFiles" folder
+4. Open the _Stylesheet_ in the Stadium Application Explorer
+5. Paste the CSS below into the Stylesheet. **NOTE:** The CSS below assumes the image name is "edit.png"
+
+```css
+td.edit-image > *,
+td.edit-image:hover > * {
+    background-image: url('/src/assets/EmbeddedFiles/edit.png');
+    background-repeat: no-repeat;
+    background-size: 20px;
+    background-position: center;
+    height: 20px;
+    width: 30px;
+    font-size: 0;
+}
 ```
