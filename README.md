@@ -24,7 +24,7 @@ Here are two ways to display an icon:
 
  [Option 1: Using the Iconify icons library](#option-1-using-the-iconify-icons-library)
  
- [Option 2: As a background image](#option-2-displaying-an-image-file)
+ [Option 2: Using an image file](#option-2-displaying-an-image-file)
 
 <hr>
 
