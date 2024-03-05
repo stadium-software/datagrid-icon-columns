@@ -20,9 +20,13 @@ https://github.com/stadium-software/datagrid-icons-property/assets/2085324/14c42
 
 ## Displaying an icon
 
-Here are two examples how an icon can be displayed. 
+Here are two ways how an icon can be displayed. 
 
-### Using the Iconify icons library
+ [Option 1: Using the Iconify icons library](#option-1-using-the-iconify-icons-library)
+ 
+ [Option 2: As a background image](#option-2-as-a-background-image)
+
+### Option 1: Using the Iconify icons library
 
 **Dependency**
 
