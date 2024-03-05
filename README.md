@@ -20,7 +20,7 @@ https://github.com/stadium-software/datagrid-icons-property/assets/2085324/14c42
 
 ## Displaying an icon
 
-Here are two ways how an icon can be displayed. 
+Here are two ways to display an icon:
 
  [Option 1: Using the Iconify icons library](#option-1-using-the-iconify-icons-library)
  
