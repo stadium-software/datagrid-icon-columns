@@ -96,6 +96,11 @@ let icons = async () => {
 initDGIcons();
 ```
 
+### Page.Load Setup
+1. Drag the "DataGridIcons" Global Script into the Page.Load Event Handler
+2. Optionally, provide a value for script the Input Parameter
+   1. HideHeaders (default is "true"): To show the DataGrid header for columns containing an icon, add "false"
+
 ### Datagrid Setup
 1. Open the DataGrid "Columns" property
 2. Select a column (usually a static column with a Click event)
@@ -122,11 +127,6 @@ Additional classes can be added to the control classes property to manipulate th
 ```
 stadium-icon material-symbols:edit icon-size-24 icon-color-eeeeee
 ```
-
-### Page.Load Setup
-1. Drag the "DataGridIcons" Global Script into the Page.Load Event Handler
-2. Optionally, provide a value for script the Input Parameter
-   1. HideHeaders (default is "true"): To show the DataGrid header for columns containing an icon, add "false"
 
 <hr>
 
