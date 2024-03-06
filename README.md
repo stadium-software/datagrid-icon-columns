@@ -15,10 +15,8 @@ https://github.com/stadium-software/datagrid-icons-property/assets/2085324/14c42
 ## DataGrid Setup
 
 1. Add a Connector, a DataGrid and populate the DataGrid with data as per usual (if you are not sure how, use [this](https://github.com/stadium-software/samples-database))
-2. Open the DataGrid "Columns" property
-3. Select a column with a "Click" event (like "Edit" or "Delete") and locate the "Classes" property
 
-## Displaying an icon
+# Displaying an icon
 
 Here are two ways to display an icon:
 
@@ -28,29 +26,31 @@ Here are two ways to display an icon:
 
 <hr>
 
-### Option 1: Using the Iconify icons library
+## Option 1: Using the Iconify icons library
 
-**Dependency**
+### Dependency
 
-To display icons using the Icons library, the [Icons Module](https://github.com/stadium-software/icons) must be implemented in the application
+To display icons using the Icons library, the [Icons Module](https://github.com/stadium-software/icons) must be implemented in the application. There is no need to invoke the Icons script directly, but it must exist in the application. 
 
 ![](images/StadiumDesigner.png)
 
-**Datagrid Setup**
-1. Add the class 'stadium-icon' to the column "Classes" property
-2. Find a symbol you wish to display (see [finding and icon](https://github.com/stadium-software/icons?tab=readme-ov-file#finding-an-icon))
-3. Add the name of the symbol to the control classes property (e.g. 'material-symbols:edit' or 'material-symbols:delete')
-
-*Example Classes*
-```
-stadium-icon material-symbols:edit
-```
-
-**Hiding the icon in the column header**
-1. To hide the icon in the column header add the CSS below to the Stylesheet
-
-```css
-th.stadium-icon > * {
+### Global Script Setup
+1. Create a Global Script and call it "DataGridIcons"
+2. Add the input parameter below to the Global Script
+   1. HideHeaders
+3. Drag a Javascript action into the script and paste the Javascript below unaltered into the action
+```javascript
+/* Stadium Script Version 1.0 - see https://github.com/stadium-software/datagrid-icons-property */
+let hideheaders = ~.Parameters.Input.HideHeaders;
+let hideh = true;
+if (typeof hideheaders == "boolean" && hideheaders == false) { 
+    hideh = false;
+}
+let dgs = document.querySelectorAll(".data-grid-container th.stadium-icon");
+let attachHeadersCSS = () => { 
+   let head = document.head;
+   let style = document.createElement("style");
+   style.innerHTML = `th.vh > * {
 	position: absolute;
 	width: 1px;
 	height: 1px;
@@ -61,11 +61,54 @@ th.stadium-icon > * {
 	clip-path: inset(100%);
 	clip: rect(0 0 0 0);
 	overflow: hidden;
-}
+   }`;
+   head.appendChild(style);
+};
+let initDGIcons = () => {
+    observer.disconnect();
+    let callIcons = true;
+    for (let i = 0; i < dgs.length; i++) {
+        if (hideh) dgs[i].classList.add("vh");
+        let tbl = dgs[i].closest("table");
+        let tds = tbl.querySelector("td.stadium-icon");
+        if (!tds) {
+            observer.observe(tbl, options);
+            callIcons = false;
+        }
+    }
+    if (callIcons) icons();
+    attachHeadersCSS();
+};
+let options = {
+        childList: true,
+        subtree: true,
+    },
+    observer = new MutationObserver(initDGIcons);
+let wait = async (milliseconds) => new Promise((resolve) => setTimeout(resolve, milliseconds));
+let icons = async () => {
+    try {
+        await this.$globalScripts().Icons();
+        return true;
+    } catch (error) {
+        wait(100).then(() => icons());
+    }
+};
+initDGIcons();
 ```
 
-**Styling the icon**
+### Datagrid Setup
+1. Open the DataGrid "Columns" property
+2. Select a column (usually a static column with a Click event)
+3. Add the class 'stadium-icon' to the column "Classes" property
+4. Find a symbol you wish to display (see [finding and icon](https://github.com/stadium-software/icons?tab=readme-ov-file#finding-an-icon))
+5. Add the name of the symbol to the control classes property (e.g. 'material-symbols:edit' or 'material-symbols:delete')
 
+*Example Classes*
+```
+stadium-icon material-symbols:edit
+```
+
+### Styling the icon
 Additional classes can be added to the control classes property to manipulate the icon
 
 1. Size
@@ -80,15 +123,21 @@ Additional classes can be added to the control classes property to manipulate th
 stadium-icon material-symbols:edit icon-size-24 icon-color-eeeeee
 ```
 
+### Page.Load Setup
+1. Drag the "DataGridIcons" Global Script into the Page.Load Event Handler
+2. Optionally, provide a value for script the Input Parameter
+   1. HideHeaders (default is "true"): To show the DataGrid header for columns containing an icon, add "false"
+
 <hr>
 
-### Option 2: Using an image file
-
-1. Add a class of your choice to the selected column "Classes" property (e.g. edit-image)
-2. Find a PNG, SVG or JPG icon file (e.g. use this [icons library](https://icones.js.org/collection/all) or just search on Google)
-3. Drag the file into the "EmbeddedFiles" folder
-4. Open the _Stylesheet_ in the Stadium Application Explorer
-5. Paste the CSS below into the Stylesheet. **NOTE:** The CSS below assumes the image name is "edit.png"
+## Option 2: Using an image file
+1. Open the DataGrid "Columns" property
+2. Select a column with a "Click" event (like "Edit" or "Delete") and locate the "Classes" property
+3. Add a class of your choice to the selected column "Classes" property (e.g. edit-image)
+4. Find a PNG, SVG or JPG icon file (e.g. use this [icons library](https://icones.js.org/collection/all) or just search on Google)
+5. Drag the file into the "EmbeddedFiles" folder
+6. Open the _Stylesheet_ in the Stadium Application Explorer
+7. Paste the CSS below into the Stylesheet. **NOTE:** The CSS below assumes the image name is "edit.png"
 
 ```css
 td.edit-image > *,
