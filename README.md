@@ -2,11 +2,7 @@
 
 Since Stadium 6.8.3 we can use the column classes property to easily display icons in DataGrid columns. 
 
-
-
 https://github.com/stadium-software/datagrid-icons-property/assets/2085324/7ccf47c7-a35e-48d9-9189-5deb6a58e697
-
-
 
 ## Version
 1.0 initial release
@@ -40,39 +36,15 @@ To display icons using the Icons library, the [Icons Module](https://github.com/
 
 ### Global Script Setup
 1. Create a Global Script and call it "DataGridIcons"
-2. Add the input parameter below to the Global Script
-   1. HideHeaders
-3. Drag a Javascript action into the script and paste the Javascript below unaltered into the action
+2. Drag a Javascript action into the script and paste the Javascript below unaltered into the action
 ```javascript
 /* Stadium Script Version 1.0 - see https://github.com/stadium-software/datagrid-icons-property */
-let hideheaders = ~.Parameters.Input.HideHeaders;
-let hideh = true;
-if (typeof hideheaders == "boolean" && hideheaders == false) { 
-    hideh = false;
-}
 let dgs = document.querySelectorAll(".data-grid-container th.stadium-icon");
-let attachHeadersCSS = () => { 
-   let head = document.head;
-   let style = document.createElement("style");
-   style.innerHTML = `th.vh > * {
-	position: absolute;
-	width: 1px;
-	height: 1px;
-	margin: -1px;
-	border: 0;
-	padding: 0;
-	white-space: nowrap;
-	clip-path: inset(100%);
-	clip: rect(0 0 0 0);
-	overflow: hidden;
-   }`;
-   head.appendChild(style);
-};
 let initDGIcons = () => {
     observer.disconnect();
     let callIcons = true;
     for (let i = 0; i < dgs.length; i++) {
-        if (hideh) dgs[i].classList.add("vh");
+        dgs[i].classList.remove("stadium-icon");
         let tbl = dgs[i].closest("table");
         let tds = tbl.querySelector("td.stadium-icon");
         if (!tds) {
@@ -81,7 +53,6 @@ let initDGIcons = () => {
         }
     }
     if (callIcons) icons();
-    attachHeadersCSS();
 };
 let options = {
         childList: true,
@@ -102,8 +73,6 @@ initDGIcons();
 
 ### Page.Load Setup
 1. Drag the "DataGridIcons" Global Script into the Page.Load Event Handler
-2. Optionally, provide a value for script the Input Parameter
-   1. HideHeaders (default is "true"): To show the DataGrid header for columns containing an icon, add "false"
 
 ### Datagrid Setup
 1. Open the DataGrid "Columns" property
