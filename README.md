@@ -37,6 +37,7 @@ To display icons using the Icons library, the [Icons Module](https://github.com/
 ### Global Script Setup
 1. Create a Global Script and call it "DataGridIcons"
 2. Drag a Javascript action into the script and paste the Javascript below unaltered into the action
+3. Add the Javascript below into the JavaScript code property
 ```javascript
 /* Stadium Script Version 1.0 - see https://github.com/stadium-software/datagrid-icons-property */
 let dgs = document.querySelectorAll(".data-grid-container th.stadium-icon");
