@@ -45,7 +45,7 @@ td.edit-image:hover > * {
 
 ![Data URL](images/data-url-location.png)
 
-8. Replace **DATAURL** in the CSS below with the copied string (e.g. as shown below)
+8. Replace **DATAURL** in the CSS with the copied string (e.g. as shown below)
 
 ```css
 td.edit-image > *,
