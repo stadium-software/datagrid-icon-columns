@@ -21,6 +21,9 @@ https://github.com/stadium-software/datagrid-icons-property/assets/2085324/7ccf4
 1. Open the DataGrid "Columns" property
 2. Select a column with a "Click" event (like "Edit" or "Delete") and locate the "Classes" property
 3. Add a class of your choice to the selected column "Classes" property (e.g. edit-image)
+
+![Column Classes Property](images/Column-Editor.png)
+
 4. Open the _Stylesheet_ in the Stadium Application Explorer
 5. Paste the CSS below into the Stylesheet
 6. Find and select an icon in this [icons library](https://icones.js.org/collection/all)
