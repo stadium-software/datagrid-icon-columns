@@ -30,7 +30,7 @@ https://github.com/stadium-software/datagrid-icons-property/assets/2085324/7ccf4
 ```css
 td.edit-image > *,
 td.edit-image:hover > * {
-    background-image: url(DATAURL);
+    background-image: url("DATAURL");
     background-repeat: no-repeat;
     background-size: 20px;
     background-position: center;
