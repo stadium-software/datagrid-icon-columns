@@ -30,7 +30,7 @@ https://github.com/stadium-software/datagrid-icons-property/assets/2085324/7ccf4
 ```css
 td.edit-image > *,
 td.edit-image:hover > * {
-    background-image: url("DATAURL");
+    background-image: url("DATAURL"); /*wrap the value in double quotes*/
     background-repeat: no-repeat;
     background-size: 20px;
     background-position: center;
@@ -45,7 +45,7 @@ td.edit-image:hover > * {
 
 ![Data URL](images/data-url-location.png)
 
-8. Replace **DATAURL** in the CSS with the copied string (e.g. as shown below)
+8. Replace **DATAURL** in the CSS with the copied string (wrapped in double quotes as shown below)
 
 ```css
 td.edit-image > *,
